@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+ 
+<title> {% block title%} Title Goes Here {% endblock%} </title>
+ 
+{% block content%} 
+    <h1> Cupcakes </h1>
+    
+    <h1> List of cupcakes</h1>
+    <div class="cupcakes">
+        <ul class="cake_list">
+            
+        </ul>
+
+    </div>
+
+
+
+    <h2>Add new Cupcake <button class="add_new_cake"> ADD </button></h2>
+
+    <div class="new_cake" style="display: none">
+        <form action="/api/cupcakess" method="post">
+            <p> Flavor <input type="text" name="flavor" placeholder="EG: Vanilla, Chocolate"></p>
+            <p> Size <input type="text" name="size" placeholder="EG: SM/MD/LG/XL"> </p>
+            <p>Rating <input type="text" name="rating" placeholder="1 to 10"></p>
+            <p> Image URL <input type="text" name="image" placeholder="Link of cupcake picture"></p>
+            <button class="new_cake_form"> Add Cupcake </button>
+        </form>
+
+        <button class="cancel_new_cake">Cancel</button>
+    </div>
+
+{% endblock %}
